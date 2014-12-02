@@ -9,32 +9,37 @@ BootstrapのSass版です。通常は [bootstrap-sass](https://github.com/twbs/b
 
 ## 使い方
 
-1. クローンする
-2. 必要なパッケージをインストールする
+- クローンする
+
+```
+git clone ここのリポジトリ
+```
+
+- 必要なパッケージをインストールする
 
 ```
 npm install
 ```
 
-3. 関連ファイルをダウンロードする
+- 関連ファイルをダウンロードする
 
 ```
 bower install
 ```
 
-4. gulpでコンパイルする
+- gulpでコンパイルする
 
 ```
 gulp
 ```
 
-5. gulpで監視する
+- gulpで監視する
 
 ```
 gulp watch
 ```
 
-6. compassで監視する
+- compassで監視する
 
 ```
 compass watch
