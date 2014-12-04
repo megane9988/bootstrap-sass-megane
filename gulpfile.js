@@ -5,10 +5,11 @@ var gulp = require('gulp'),
     notify = require("gulp-notify")
     bower = require('gulp-bower')
     compass = require('gulp-compass')
+    ect = require('gulp-ect')
     uglify = require('gulp-uglify');
 
-
 var config = {
+    ectPath: './ect',
     sassPath: './sass',
     jsPath: './bower_components/bootstrap-sass-official/assets/javascripts/',
     bowerDir: './bower_components'
@@ -23,6 +24,12 @@ gulp.task('bower', function() {
 gulp.task('glyphicons', function() {
     return gulp.src(config.bowerDir + '/bootstrap-sass-official/assets/fonts/bootstrap/**.*')
         .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('ect', function(){
+  gulp.src(config.ectPath + '/*.ect')
+      .pipe(ect())
+      .pipe(gulp.dest('./public/'));
 });
 
 gulp.task('compass', function() {
@@ -63,4 +70,4 @@ gulp.task('watch', function() {
     gulp.watch(config.sassPath + '/*.scss', ['compass']);
 });
 
-gulp.task('default', ['bower', 'glyphicons', 'compass', 'js']);
+gulp.task('default', ['bower', 'glyphicons', 'ect', 'compass', 'js']);
